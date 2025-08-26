@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Search</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+
+    <!-- Header / Navbar -->
+    <header class="search-header">
+        <div class="search-bar-wrapper">
+            <input type="text" placeholder="Search GitHub users..." class="search-input" id="search-input" />
+            <div class="search-dropdown">
+                <div class="dropdown-section">
+                    <h4>Recommended Profiles</h4>
+                    <ul id="suggested-profiles">
+                        <!-- JS will populate -->
+                    </ul>
+                </div>
+                <div class="dropdown-section">
+                    <h4>Recently Viewed</h4>
+                    <ul id="recent-profiles">
+                        <!-- JS will populate -->
+                    </ul>
+                </div>
+                <div class="dropdown-section">
+                    <h4>Languages</h4>
+                    <div id="language-filters" class="language-filters">
+                        <!-- JS will inject filter buttons like:
+  <button class="language-filter">JavaScript</button>
+  -->
+                      
+
+                    </div>
+
+                </div>
+                  <div class="dropdown-footer">
+                            <button id="go-to-results">Search</button>
+                        </div>
+            </div>
+        </div>
+        <nav class="header-nav">
+
+            <a href="#">Bookmarks</a>
+            <a href="#">Repositories</a>
+            <a href="#">Followers</a>
+            <a href="#">Languages</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="search-main">
+        <section class="profiles-grid">
+            <!-- Example Profile Cards -->
+            <div class="profile-card">
+                <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="Profile" />
+                <h3>Linus Torvalds</h3>
+                <p>@torvalds</p>
+                <p>Creator of Linux</p>
+            </div>
+            <div class="profile-card">
+                <img src="https://avatars.githubusercontent.com/u/2?v=4" alt="Profile" />
+                <h3>Tom Preston-Werner</h3>
+                <p>@mojombo</p>
+                <p>Co-founder of GitHub</p>
+            </div>
+            <div class="profile-card">
+                <img src="https://avatars.githubusercontent.com/u/3?v=4" alt="Profile" />
+                <h3>pjhyett</h3>
+                <p>@pjhyett</p>
+                <p>GitHub OG</p>
+            </div>
+            <div class="profile-card">
+                <img src="https://avatars.githubusercontent.com/u/4?v=4" alt="Profile" />
+                <h3>defunkt</h3>
+                <p>@defunkt</p>
+                <p>Early GitHub Dev</p>
+            </div>
+            <div class="profile-card">
+                <img src="https://avatars.githubusercontent.com/u/5?v=4" alt="Profile" />
+                <h3>schacon</h3>
+                <p>@schacon</p>
+                <p>Git Book Author</p>
+            </div>
+            <div class="profile-card">
+                <img src="https://avatars.githubusercontent.com/u/6?v=4" alt="Profile" />
+                <h3>torvalds</h3>
+                <p>@linus</p>
+                <p>Linux Maintainer</p>
+            </div>
+            <div class="profile-card">
+                <img src="https://avatars.githubusercontent.com/u/7?v=4" alt="Profile" />
+                <h3>octocat</h3>
+                <p>@octocat</p>
+                <p>GitHub Mascot</p>
+            </div>
+            <div class="profile-card">
+                <img src="https://avatars.githubusercontent.com/u/8?v=4" alt="Profile" />
+                <h3>vanpelt</h3>
+                <p>@vanpelt</p>
+                <p>OG GitHubber</p>
+            </div>
+        </section>
+
+        <div class="load-more-container">
+            <button class="load-more-btn">Load More</button>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-left">
+            <h2>GitHub Profile Explorer</h2>
+            <p>Explore GitHub profiles effortlessly!</p>
+            <strong>GitHub Profile Explorer</strong>
+        </div>
+        <div class="footer-right">
+            <h4>Help</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Customer support</a></li>
+                <li><a href="#">How to use</a></li>
+                <li><a href="#">Contact support</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
+
+<script>
+    const searchInput = document.getElementById("search-input");
+    const dropdown = document.querySelector(".search-dropdown");
+
+    searchInput.addEventListener("focus", () => {
+        dropdown.style.display = "block";
+    });
+
+    searchInput.addEventListener("blur", () => {
+        setTimeout(() => {
+            dropdown.style.display = "none";
+        }, 200); // Allow time for clicking items
+    });
+</script>
+<script>
+    const suggestions = ["@torvalds", "@gaearon", "@sindresorhus"];
+    const recent = ["@addyosmani", "@tj", "@jakearchibald"];
+    const languages = ["JavaScript", "Python", "C++", "Rust"];
+
+    const fillList = (id, items) => {
+        const ul = document.getElementById(id);
+        ul.innerHTML = "";
+        items.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            ul.appendChild(li);
+        });
+    };
+
+    fillList("suggested-profiles", suggestions);
+    fillList("recent-profiles", recent);
+    const injectLanguageButtons = (containerId, languages) => {
+        const container = document.getElementById(containerId);
+        container.innerHTML = "";
+        languages.forEach(lang => {
+            const btn = document.createElement("button");
+            btn.textContent = lang;
+            btn.className = "language-filter";
+            container.appendChild(btn);
+        });
+    };
+
+    injectLanguageButtons("language-filters", languages);
+    document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("language-filter")) {
+            e.target.classList.toggle("active");
+            // Optional: do something with selected filters here
+        }
+    });
+
+
+document.getElementById("go-to-results").addEventListener("click", () => {
+    // Optional: Save data to localStorage or pass via query param
+    window.location.href = "result.html";
+  });
+</script>

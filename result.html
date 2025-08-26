@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Profile Search</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- 🔹 Header -->
+  <header class="result-header">
+    <div class="result-logo-title">GITHUB PROFILE</div>
+
+    <nav class="result-nav">
+      <a href="#">User Profiles</a>
+      <a href="#">Repositories</a>
+      <a href="#">Trending</a>
+    </nav>
+
+    <div class="result-auth-buttons">
+      <button class="btn-signup">Sign Up</button>
+      <button class="btn-login">Login</button>
+    </div>
+  </header>
+
+  <main class="result-layout">
+
+    <!-- 🔹 Sidebar Filter Panel -->
+    <aside class="result-filter-panel">
+      <button class="close-panel-btn"><i class="fas fa-arrow-left"></i></button>
+
+      <h2>Search GitHub Users</h2>
+
+      <label for="username">Username or Email</label>
+      <input type="text" id="username" placeholder="e.g. torvalds" />
+
+      <label for="language">Language Filter</label>
+      <select id="language">
+        <option value="">All</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>Rust</option>
+        <option>C++</option>
+      </select>
+
+      <label for="sort">Sort By</label>
+      <select id="sort">
+        <option value="followers">Followers</option>
+        <option value="repositories">Repositories</option>
+        <option value="stars">Stars</option>
+      </select>
+
+      <label for="followers">Minimum Followers</label>
+      <input type="number" id="followers" placeholder="e.g. 100" />
+
+      <button class="btn-search">Search</button>
+    </aside>
+
+    <!-- 🔹 Main Results Section -->
+    <section class="result-main-section">
+
+      <div class="result-results-header">
+        <p><span id="results-count">0</span> profi<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Profile Search</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- 🔹 Header -->
+  <header class="result-header">
+    <div class="result-logo-title">GITHUB PROFILE</div>
+
+    <nav class="result-nav">
+      <a href="#">User Profiles</a>
+      <a href="#">Repositories</a>
+      <a href="#">Trending</a>
+    </nav>
+
+    <div class="result-auth-buttons">
+      <button class="btn-signup">Sign Up</button>
+      <button class="btn-login">Login</button>
+    </div>
+  </header>
+
+  <main class="result-layout">
+
+    <!-- 🔹 Sidebar Filter Panel -->
+    <aside class="result-filter-panel">
+      <button class="close-panel-btn"><i class="fas fa-arrow-left"></i></button>
+
+      <h2>Search GitHub Users</h2>
+
+      <label for="username">Username or Email</label>
+      <input type="text" id="username" placeholder="e.g. torvalds" />
+
+      <label for="language">Language Filter</label>
+      <select id="language">
+        <option value="">All</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>Rust</option>
+        <option>C++</option>
+      </select>
+
+      <label for="sort">Sort By</label>
+      <select id="sort">
+        <option value="followers">Followers</option>
+        <option value="repositories">Repositories</option>
+        <option value="stars">Stars</option>
+      </select>
+
+      <label for="followers">Minimum Followers</label>
+      <input type="number" id="followers" placeholder="e.g. 100" />
+
+      <button class="btn-search">🔍 Search</button>
+    </aside>
+
+    <!-- 🔹 Main Results Section -->
+    <section class="result-main-section">
+
+      <div class="result-results-header">
+        <p><span id="results-count">0</span> profiles found</p>
+        <h2><span id="search-term">[Name]</span> - GitHub Profile</h2>
+      </div>
+
+      <!-- 🔹 Profile Cards -->
+      <div class="result-profiles-wrapper">
+
+        <!-- Example Card -->
+        <div class="profile-wide-card">
+          <div class="card-header">
+            <h3>Linus Torvalds</h3>
+            <p>Creator of Linux Kernel and Git</p>
+          </div>
+          <div class="card-stats">
+            <p><strong>Repos:</strong> 42</p>
+            <p><strong>Forks:</strong> 980</p>
+            <p><strong>Stars:</strong> 12.5k</p>
+            <p><strong>Languages:</strong> C, C++, Assembly</p>
+          </div>
+          <div class="card-buttons">
+            <button class="btn-bookmark"><i class="fas fa-bookmark"></i> Bookmark</button>
+            <button class="btn-view-repos">View Repositories</button>
+          </div>
+        </div>
+
+        <!-- More cards dynamically added with JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <h2>GitHub Profile Explorer</h2>
+      <p>Explore GitHub profiles effortlessly!</p>
+      <strong>GitHub Profile Explorer</strong>
+    </div>
+    <div class="footer-right">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Customer support</a></li>
+        <li><a href="#">How to use</a></li>
+        <li><a href="#">Contact support</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
+les found</p>
+        <h2><span id="search-term">[Name]</span> - GitHub Profile</h2>
+      </div>
+
+      <!-- 🔹 Profile Cards -->
+      <div class="result-profiles-wrapper">
+
+        <!-- Example Card -->
+        <div class="profile-wide-card">
+          <div class="card-header">
+            <h3>Linus Torvalds</h3>
+            <p>Creator of Linux Kernel and Git</p>
+          </div>
+          <div class="card-stats">
+            <p><strong>Repos:</strong> 42</p>
+            <p><strong>Forks:</strong> 980</p>
+            <p><strong>Stars:</strong> 12.5k</p>
+            <p><strong>Languages:</strong> C, C++, Assembly</p>
+          </div>
+          <div class="card-buttons">
+            <button class="btn-bookmark"><i class="fas fa-bookmark"></i> Bookmark</button>
+            <button class="btn-view-repos">View Repositories</button>
+          </div>
+        </div>
+
+        <!-- More cards dynamically added with JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <h2>GitHub Profile Explorer</h2>
+      <p>Explore GitHub profiles effortlessly!</p>
+      <strong>GitHub Profile Explorer</strong>
+    </div>
+    <div class="footer-right">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Customer support</a></li>
+        <li><a href="#">How to use</a></li>
+        <li><a href="#">Contact support</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
